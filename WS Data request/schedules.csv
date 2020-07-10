@@ -1,0 +1,43 @@
+context_code,ind_resident,lagent_name,log_level,r_cycle_unit,r_deadline,r_deadline_unit,r_dur_cycle,r_dur_interval,r_interval_unit,r_time,r_time_error,row_tag,s_begin_date,s_day,s_end_date,s_hour,s_minute,s_month,s_month_day,s_second,s_type,s_week_day,s_year,scen_name,scen_version,stat_plan,tool,user_name
+APL_CRM,,OracleDIAgent,5,,,,,15,M,0,,1,,1,,0,30,1,,0,S,,2000,apl-crm-app general daily plan,,E,CDP-OCI,ricardo.aceves@oracle.com
+APL_OALOPS,,OracleDIAgent,5,,,,,,,1,0,2,,,,8,0,,,0,W,1,,apl-oalops-app BugDB OSvC Aggregate Load Plan,,E,CDP-OCI,
+APL_OALOPS,,OracleDIAgent,5,,,,,360,M,0,,3,,24,,21,30,3,,0,S,,2020,apl-oalops-app BugDB OSvC Load Plan,,E,CDP-OCI,laura.c.moreno@oracle.com
+APL_SCM,,OracleDIAgent,5,,,,,,,1,0,4,,,,0,30,,,0,H,,,apl-scm-app 101 inventory hourly load plan,,E,CDP-OCI,
+APL_SCM,,OracleDIAgent,5,,,,,10,M,0,0,5,,1,,1,0,1,,0,S,,2000,apl-scm-app 102 Order Management hourly load plan,,E,CDP-OCI,
+APL_SCM,,OracleDIAgent,5,,,,,,,1,0,6,,24,,19,0,5,,0,S,,2018,apl-scm-app 106 MAKE hourly load plan,,E,CDP-OCI,
+APL_SCM,,OracleDIAgent,5,,,,,120,M,0,0,7,,1,,2,0,1,,0,S,,2000,apl-scm-app 201 MAKE hourly load plan,,E,CDP-OCI,
+APL_SCM,,OracleDIAgent,5,,,,,120,M,0,0,8,,1,,2,0,1,,0,S,,2000,apl-scm-app 400 pricing hourly load plan,,E,CDP-OCI,
+APL_SCM,,OracleDIAgent,5,,,,,180,M,0,0,9,,1,,8,30,1,,0,S,,2000,apl-scm-app 509 SCP PvA Three Hourly load plan,,E,CDP-OCI,
+APL_SCM,,OracleDIAgent,5,,,,,,,1,0,10,,,,4,0,,,0,D,,,apl-scm-app 900 parallel daily load plan,,E,CDP-OCI,
+APL_SCM,,OracleDIAgent,5,,,,,,,1,0,11,,,,4,0,,,0,D,,,apl-scm-app 901 serial daily load plan,,E,CDP-OCI,
+APL_SCM,,OracleDIAgent,5,,,,,,,1,0,12,,,,11,0,,,0,D,,,apl-scm-app EO daily load plan,,E,CDP-OCI,
+APL_SCM,,OracleDIAgent,5,,,,,,,1,,13,,13,,19,0,5,,0,D,,2020,apl-scm-core product complete load plan,,E,CDP-OCI,madan.chinthakunta@oracle.com
+APL_SCM,,OracleDIAgent,6,,,,,15,M,0,,14,,8,,8,0,5,,0,S,,2020,apl-scm-core quality conditional load plan,,I,CDP-OCI,pradip.chavan@oracle.com
+APL_SCM,,OracleDIAgent,5,,,,,15,M,0,,15,,8,,8,45,5,,0,S,,2020,apl-scm-mfg-quality-conditional,,I,CDP-OCI,pradip.chavan@oracle.com
+APL_SCM,,OracleDIAgent,6,,,,,,,1,,16,,20,,0,15,4,,0,H,,2020,apl-scm-scp MODEL LP,,E,CDP-OCI,pradip.chavan@oracle.com
+APL_SCM,,OracleDIAgent,6,,,,,,,1,,17,,20,,0,30,4,,0,H,,2020,apl-scm-scp OPTION LP,,E,CDP-OCI,pradip.chavan@oracle.com
+APL_SCM,,OracleDIAgent,6,,,,,,,1,,18,,20,,18,7,4,,0,D,,2020,apl-scm-scp SP LP,,E,CDP-OCI,adrian.luna@oracle.com
+APPL_MONITOR,,OracleDIAgent,5,,,,,,,1,0,19,,,,0,0,,,0,H,,,appl-monitor-app plan,,E,CDP-OCI,
+SDS_GEC,,OracleDIAgent,5,,,,,,,1,0,20,,,,10,30,,,0,D,,,daily 1030 plan,,E,CDP-OCI,
+FDL_COMMON,,OracleDIAgent,5,,,,,,,1,0,21,,,,0,0,,,0,H,,,fdl-common-app hourly consume,,E,CDP-OCI,
+GLOBAL,,OracleDIAgent,5,,,,,,,1,0,22,,,,0,0,,,0,D,,,fdl-common-app smoke-test plan,,E,CDP-OCI,
+FDL_ERP,,OracleDIAgent,5,,,,,,,1,,23,,,,5,0,,,0,D,,,fdl-erp-app core daily plan1,,D,CDP-OCI,pradip.chavan@oracle.com
+FDL_ERP,,OracleDIAgent,5,,,,,,,1,,24,,7,,7,0,5,,0,D,,2020,fdl-erp-pfm Utilization,,E,CDP-OCI,adrian.luna@oracle.com
+FDL_ERP,,OracleDIAgent,5,,,,,,,1,,25,,7,,19,0,5,,0,D,,2020,fdl-erp-pfm Utilization,,E,CDP-OCI,adrian.luna@oracle.com
+SDS_ATGBI_GEC,,OracleDIAgent,5,,,,,,,1,0,26,,,,0,0,,,0,D,,,sds-atgbi-app plan,,E,CDP-OCI,
+GLOBAL,,OracleDIAgent,5,,,,,,,1,0,27,,,,0,0,,,0,D,,,sds-atgbi-app smoke-test plan,,E,CDP-OCI,
+SDS_BUG,,OracleDIAgent,5,,,,,,,1,,28,,,,8,0,,,0,D,2,,sds-bug-app load plan,,D,CDP-OCI,miguel.ojeda@oracle.com
+SDS_GEC,,OracleDIAgent,5,,,,,,,1,0,29,,,,0,30,,,0,D,,,sds-fia-app daily initial auto load plan,,E,CDP-OCI,
+SDS_GEC,,OracleDIAgent,5,,,,,,,1,0,30,,,,0,0,,,0,H,,,sds-fia-app hourly auto load plan1,,E,CDP-OCI,
+SDS_GEC,,OracleDIAgent,5,,,,,,,1,0,31,,,,0,0,,,0,H,,,sds-fia-app hourly plan1,,E,CDP-OCI,
+SDS_GEC,,OracleDIAgent,5,,,,,,,1,,32,,,,0,0,,,0,H,,,sds-fia-app hourly plan1 corrupted,,D,CDP-OCI,SUPERVISOR
+SDS_GEC,,OracleDIAgent,5,,,,,,,1,,33,,,,0,0,,,0,H,,,sds-fia-app hourly plan1-Temp,,D,CDP-OCI,adrian.luna@oracle.com
+SDS_GEC,,OracleDIAgent,5,,,,,5,M,0,0,34,,24,,13,0,12,,0,S,,2018,sds-fia-app om custom load,,E,CDP-OCI,
+SDS_GEC,,OracleDIAgent,5,,,,,,,1,0,35,,,,15,0,,,0,D,,,sds-fia-app scm full load plan,,E,CDP-OCI,
+SDS_GEC,,OracleDIAgent,5,,,,,,,1,0,36,,,,0,0,,,0,H,,,sds-fia-erp hourly load plan Fin01,,E,CDP-OCI,
+GLOBAL,,OracleDIAgent,5,,,,,,,1,0,37,,,,0,0,,,0,D,,,sds-gec-app smoke-test plan,,E,CDP-OCI,
+GLOBAL,,OracleDIAgent,5,,,,,,,1,0,38,,,,0,0,,,0,D,,,sds-gsi-app smoke-test plan,,E,CDP-OCI,
+SDS_GXP_OALSCM,,OracleDIAgentREST,5,,,,,,,1,0,39,,,,5,0,,,0,D,,,sds-gxp-app EO daily load plan,,E,CDP-OCI,
+SDS_GXP_CDP_SCM,,OracleDIAgent,5,,,,,,,1,0,40,,24,,23,15,5,,0,S,,2018,sds-gxp-oalscm-app load plan,,E,CDP-OCI,
+SDS_OALPRJ,,OracleDIAgent,5,,,,,,,1,0,41,,,,0,0,,,0,H,,,sds-oalprj-app stream replicate hourly,,E,CDP-OCI,
+SDS_OSVC,,OracleDIAgent,5,,,,,360,M,0,0,42,,21,,3,0,12,,0,S,,2019,sds-osvc-app load plan,,E,CDP-OCI,

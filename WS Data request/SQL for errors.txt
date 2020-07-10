@@ -1,0 +1,83 @@
+select substr(sess.error_message,INSTR(sess.error_message,'ORA-'),10)   err , sess.error_message
+from oalodi_odi_repo.snp_session sess
+where 1=1
+and (      error_message NOT like '%ORA-00904%' -- invalid identifier
+       and error_message NOT like '%ORA-00942%' -- table or view does not exist
+       and error_message NOT like '%ORA-12899%' -- value too large
+       and error_message not like '%ORA-01452%' -- cannot CREATE UNIQUE INDEX
+       and error_message not like '%ORA-00955%' -- name is already used by an existing object
+       and error_message not like '%ORA-00001%' -- unique constraint violated
+       and error_message not like '%ORA-02289%' -- sequence does not exist
+       and error_message not like '%ORA-14501%' -- object is not partitioned
+       and error_message not like '%ORA-30926%' -- unable to get a stable set of rows
+       and error_message not like '%ORA-01427%' -- single-row subquery returns more than one row
+       and error_message not like '%ORA-23413%' -- table does not have a materialized view log
+       and error_message not like '%ODI-17523%' -- There is no connection for this logical schema / context pair
+       and error_message not like '%exception from Groovy%' -- Normally, an error with Groovy Script
+          
+       ------------ PERFORMANCE ISSUES -------------------------
+       and error_message not like '%ORA-12801%' -- rollback segment
+       and error_message not like '%ORA-01555%' -- snapshot too old
+       and error_message not like '%ORA-00054%' -- "resource busy and acquire with NOWAIT specified or timeout expired
+       and error_message not like '%ORA-00060%' -- deadlock detected
+       and error_message not like '%is still running%'
+       and error_message not like '%as stale session and set%'
+       and error_message not like '%IO Error: Socket read interrupted%'
+       
+       
+       ------------ CONNECTION ISSUES -------------------------
+       and error_message not like '%ORA-01109%' -- database not open
+       and error_message not like '%ORA-28862%' -- SSL connection failed
+       and error_message not like '%ORA-12514%' -- TNS:listener does not currently know of service requested in connect descriptor
+       and error_message not like '%ORA-03150%' -- end-of-file on communication channel for database link
+       and error_message not like '%ORA-12528%' -- TNS:listener all appropriate instances are blocking new connections
+       and error_message not like '%ORA-12560%' -- TNS:protocol adapter error
+       and error_message not like '%ORA-12526%' -- TNS:listener: all appropriate instances are in restricted mode
+       and error_message not like '%ORA-02051%' -- another session or branch in same transaction failed or finalized
+       and error_message not like '%ORA-12170%' -- TNS:Connect timeout occurred
+       and error_message not like '%No more data to read from socket%'
+       and error_message not like '%java.lang.InterruptedException%'
+       and error_message not like '%exception from Jython%'
+       and error_message not like '%Could not create pool connection for datasource%'
+       and error_message not like '%The connection has been administratively diabled%'
+       and error_message not like '%the connection is already closed%'
+       
+       );
+       
+       
+       
+select case when err like '%12899%' then substr(err,0,instr(err,':',1,3)+6)
+            when err like '%00001%' then substr(err,0,instr(err,'at',1,2)-1)
+            when (    err like '%00942%' 
+                   or err like '%01427%'
+                   or err like '%00904%') then substr(err,0,instr(err,'at',1,1)-1)
+       else substr(err,0,instr(err,':',1,2)-10) 
+       end error
+--substr(errorperrron,0,instr(errorperrron,':',1,2)-10) 
+from (
+select substr(dbms_lob.substr(error_message,4000,1),INSTR(error_message,'ORA-'),4000) err from oalodi_odi_repo.snp_session
+where error_message is not null
+and SESS_BEG > sysdate - 11
+and error_message like '%ORA-00109%'
+);
+​
+​
+select substr(dbms_lob.substr(error_message,4000,1),INSTR(error_message,'ORA-'),4000) errorperrron, error_message from oalodi_odi_repo.snp_session
+where error_message is not null
+and error_message like '%Exception getJDBCConnection("DEST")%'
+and SESS_BEG > sysdate - 20;
+​
+​
+           err like '%ORA-00904%' -- invalid identifier
+       and err like '%ORA-00942%' -- table or view does not exist
+       and err like '%ORA-12899%' -- value too large
+       and err like '%ORA-01452%' -- cannot CREATE UNIQUE INDEX
+       and err like '%ORA-00955%' -- name is already used by an existing object
+       and err like '%ORA-00001%' -- unique constraint violated
+       and err like '%ORA-02289%' -- sequence does not exist
+       and err like '%ORA-14501%' -- object is not partitioned
+       and err like '%ORA-30926%' -- unable to get a stable set of rows
+       and err like '%ORA-01427%' -- single-row subquery returns more than one row
+       and err like '%ORA-23413%' -- table does not have a materialized view log
+       and err like '%ODI-17523%' -- There is no connection for this logical schema / context pair
+       and err like '%exception from Groovy%';
